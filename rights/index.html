@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>隐私权利 — 衡绘 Hengraph</title>
+<meta name="description" content="衡绘 Hengraph 隐私权利说明：如何查看本地项目、如何删除单个项目、删除覆盖范围、源文件与已导出文件的处理方式，以及联系开发者的渠道。">
+<meta name="theme-color" content="#0e6e6a">
+<meta name="robots" content="index, follow">
+<link rel="stylesheet" href="../assets/style.css">
+</head>
+<body>
+<a class="skip" href="#main">跳至主要内容</a>
+
+<header class="site">
+  <div class="bar">
+    <a class="brand" href="../">
+      <span class="mark" aria-hidden="true"></span>
+      <span class="cn">衡绘</span>
+      <span class="en">Hengraph</span>
+    </a>
+    <nav class="site" aria-label="主导航">
+      <a href="../">首页</a>
+      <a href="../privacy/">隐私政策</a>
+      <a href="../rights/" aria-current="page">隐私权利</a>
+      <a href="../contact/">联系与支持</a>
+    </nav>
+  </div>
+</header>
+
+<main id="main">
+
+  <div class="pagehead">
+    <div class="doc">
+      <h1>隐私权利</h1>
+      <div class="meta">
+        <span>适用应用：<b>衡绘 Hengraph 0.2.2</b></span>
+        <span>页面更新：<b><time datetime="2026-10-21">2026-10-21</time></b></span>
+      </div>
+    </div>
+  </div>
+
+  <div class="doc">
+
+    <div class="callout">
+      <p><strong>你的数据在你手上。</strong>衡绘没有账号、没有云端、没有后台。因此你的隐私权利不通过“提交工单”实现，
+      而是直接在应用内完成：查看项目、逐个删除、卸载清除。本页说明每一步的确切路径与影响范围。</p>
+    </div>
+
+    <div class="legal">
+
+      <section>
+        <h2><span class="idx">01</span>查看本地保存的项目</h2>
+        <p><strong>路径：</strong>首页“最近项目”区域 → “查看全部 ›”；或底部导航栏“项目”标签。</p>
+        <ul>
+          <li>列表按保存时间展示每个项目的摘要信息（项目名称、保存时间、数据规模）。</li>
+          <li>项目卡片右侧的“⋯”菜单提供三项操作：<strong>打开</strong>、<strong>重命名</strong>、<strong>删除</strong>。</li>
+          <li>“我的”标签下另有一个“我的数据”区块，显示本应用保存的项目数量与占用空间合计（仅统计本应用保存的项目文件）。</li>
+        </ul>
+        <p>衡绘不会在应用内展示或管理你设备上其他位置的文件。</p>
+      </section>
+
+      <section>
+        <h2><span class="idx">02</span>删除单个项目</h2>
+        <p><strong>操作步骤：</strong></p>
+        <ol>
+          <li>进入底部“项目”标签；</li>
+          <li>在目标项目右侧点击“⋯”；</li>
+          <li>选择“删除”；</li>
+          <li>在确认弹窗中点击“<strong>确认删除</strong>”。</li>
+        </ol>
+        <p>确认前会看到提示：“删除后该项目的源数据将被移除，且不可恢复。”若选择“取消”，不会发生任何改动。</p>
+        <h3>该操作覆盖什么</h3>
+        <ul>
+          <li>该项目目录下的<strong>全部版本快照</strong>（<code>v-&lt;时间戳&gt;</code>），其中包含 <code>manifest.json</code> 与 <code>source.csv</code>；</li>
+          <li>该项目的 <code>current</code> 指针与项目目录本身；</li>
+          <li>删除后该项目不再出现在项目列表中，也无法再打开或导出。</li>
+        </ul>
+        <p>删除是<strong>不可恢复</strong>的：衡绘不把内容留在回收站、缓存或任何服务器副本中。若删除失败，应用会显示失败原因，
+        而不是静默忽略。</p>
+      </section>
+
+      <section>
+        <h2><span class="idx">03</span>删除全部数据</h2>
+        <p>有两种方式，效果相同：</p>
+        <ul>
+          <li><strong>卸载应用：</strong>在系统桌面长按图标卸载，或在系统设置的应用管理中卸载；</li>
+          <li><strong>清除应用数据：</strong>系统设置 → 应用和服务 → 衡绘 → 存储 → 清除数据。</li>
+        </ul>
+        <p>这两种操作会移除应用沙箱内的全部项目、源 CSV 副本与本地偏好设置。</p>
+      </section>
+
+      <section>
+        <h2><span class="idx">04</span>什么不会被上述操作删除</h2>
+        <p>请特别注意以下三类内容，它们不在应用的控制范围内：</p>
+        <table>
+          <thead><tr><th scope="col">内容</th><th scope="col">为什么不会被删除</th><th scope="col">如何处理</th></tr></thead>
+          <tbody>
+            <tr>
+              <td>原始 CSV 文件</td>
+              <td>它位于你导入前存放的位置（如“文件管理”中的下载或文档目录），应用只是读取，未曾移动或删除它</td>
+              <td>在文件管理中自行删除</td>
+            </tr>
+            <tr>
+              <td>已导出的 PNG / SVG / CSV / JSON</td>
+              <td>导出时写在<strong>你选择的目录</strong>，可能已位于公共存储或已分享给其他应用</td>
+              <td>在对应目录或应用中自行删除；已分享出去的副本需向接收方请求删除</td>
+            </tr>
+            <tr>
+              <td>系统备份中的副本</td>
+              <td>若你启用了 HarmonyOS 系统备份或换机迁移，沙箱数据可能随系统备份被处理</td>
+              <td>在系统设置的备份管理中删除对应备份</td>
+            </tr>
+          </tbody>
+        </table>
+      </section>
+
+      <section>
+        <h2><span class="idx">05</span>更正与导出</h2>
+        <ul>
+          <li><strong>更正：</strong>项目名称可通过“⋯ → 重命名”修改。数据内容本身以你导入的 CSV 为准，衡绘不会改写你的原始数值；如需修正数据，请修改源文件后重新导入。</li>
+          <li><strong>导出：</strong>任何时候你都可以把当前项目导出为 PNG、SVG、CSV 与清单文件，将数据带到其他工具中。</li>
+        </ul>
+      </section>
+
+      <section>
+        <h2><span class="idx">06</span>未实现的操作与说明</h2>
+        <p>为避免误导，以下操作在衡绘中<strong>不存在</strong>，因为它们所针对的对象也不存在：</p>
+        <ul>
+          <li><strong>账号注销：</strong>应用没有账号体系，无需也不能注册登录，因此没有账号注销入口；</li>
+          <li><strong>云端数据删除申请：</strong>应用不向任何服务器上传数据，开发者侧没有你的数据副本可供删除；</li>
+          <li><strong>隐私开关 / 遥测开关：</strong>不存在可关闭的数据采集项，因为本身没有采集、统计或崩溃上报组件；</li>
+          <li><strong>隐私设置页：</strong>应用内“我的 → 隐私与数据管理”仅为静态说明文字，不含任何数据提交开关。</li>
+        </ul>
+        <p>如果你认为本应存在某项操作而实际没有，请通过下方渠道告知开发者，我们会在后续版本中评估。</p>
+      </section>
+
+      <section>
+        <h2><span class="idx">07</span>联系开发者</h2>
+        <p>就隐私问题、删除疑问或本页描述与实际行为不一致的情况，请联系：</p>
+        <ul>
+          <li><strong>电子邮件：</strong><a href="mailto:syb13894843523@outlook.com">syb13894843523@outlook.com</a></li>
+          <li><strong>支持页面：</strong><a href="../contact/">联系与支持</a></li>
+        </ul>
+        <p>由于开发者无法访问你设备上的任何数据，涉及具体文件的问题通常需要你自行在设备上操作；
+        我们能提供的是功能说明、缺陷修复与行为核实。</p>
+      </section>
+
+    </div>
+
+    <p style="margin:30px 0 0"><a href="../privacy/">← 返回隐私政策</a></p>
+  </div>
+
+</main>
+
+<footer class="site">
+  <div class="bar">
+    <div class="col">
+      <strong>衡绘 Hengraph</strong> · <code>com.sunyubo.sciviz</code><br>
+      本页操作路径均与当前发布版本一致。
+    </div>
+    <div class="col">
+      <nav aria-label="页脚导航">
+        <a href="../">首页</a>
+        <a href="../privacy/">隐私政策</a>
+        <a href="../contact/">联系与支持</a>
+      </nav>
+      <div style="margin-top:6px">最近更新：<time datetime="2026-10-21">2026-10-21</time></div>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>

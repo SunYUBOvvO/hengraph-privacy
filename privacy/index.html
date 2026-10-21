@@ -1,0 +1,315 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>隐私政策 — 衡绘 Hengraph</title>
+<meta name="description" content="衡绘 Hengraph 隐私政策：本地 CSV 处理、本地科学计算、项目存储、导出、AI 交接、权限与网络访问、删除方式与联系方式。">
+<meta name="theme-color" content="#0e6e6a">
+<meta name="robots" content="index, follow">
+<link rel="stylesheet" href="../assets/style.css">
+</head>
+<body>
+<a class="skip" href="#main">跳至主要内容</a>
+
+<header class="site">
+  <div class="bar">
+    <a class="brand" href="../">
+      <span class="mark" aria-hidden="true"></span>
+      <span class="cn">衡绘</span>
+      <span class="en">Hengraph</span>
+    </a>
+    <nav class="site" aria-label="主导航">
+      <a href="../">首页</a>
+      <a href="../privacy/" aria-current="page">隐私政策</a>
+      <a href="../rights/">隐私权利</a>
+      <a href="../contact/">联系与支持</a>
+    </nav>
+  </div>
+</header>
+
+<main id="main">
+
+  <div class="pagehead">
+    <div class="doc">
+      <h1>隐私政策</h1>
+      <div class="meta">
+        <span>适用应用：<b>衡绘 Hengraph</b></span>
+        <span>包名：<b>com.sunyubo.sciviz</b></span>
+        <span>版本：<b>0.2.2</b></span>
+        <span>生效日期：<b><time datetime="2026-10-21">2026-10-21</time></b></span>
+      </div>
+    </div>
+  </div>
+
+  <div class="doc">
+
+    <div class="callout">
+      <p><strong>一句话概括：</strong>衡绘在你的设备上完成 CSV 解析、科学计算、图表绘制与导出。
+      应用不请求网络权限，不包含统计或崩溃上报组件，不会把你的科学文件或分析结果上传到开发者服务器或在线 AI 服务。
+      文件离开应用沙箱的唯一途径，是你主动导出或分享。</p>
+    </div>
+
+    <div class="toc" aria-label="目录">
+      <h2>目录</h2>
+      <ol>
+        <li><a href="#s1">产品身份与政策范围</a></li>
+        <li><a href="#s2">开发者与运营者信息</a></li>
+        <li><a href="#s3">你选择的 CSV 文件</a></li>
+        <li><a href="#s4">本地科学计算</a></li>
+        <li><a href="#s5">本地项目存储</a></li>
+        <li><a href="#s6">PNG / SVG / CSV / 元数据导出</a></li>
+        <li><a href="#s7">AI 交接与可选的外部共享</a></li>
+        <li><a href="#s8">个人信息与权限</a></li>
+        <li><a href="#s9">网络访问与第三方 SDK</a></li>
+        <li><a href="#s10">存储位置与保留期限</a></li>
+        <li><a href="#s11">你的权利与本地删除</a></li>
+        <li><a href="#s12">儿童隐私</a></li>
+        <li><a href="#s13">政策更新</a></li>
+        <li><a href="#s14">开发者联系方式</a></li>
+        <li><a href="#s15">生效日期与审计依据</a></li>
+      </ol>
+    </div>
+
+    <div class="legal">
+
+      <section id="s1">
+        <h2><span class="idx">01</span>产品身份与政策范围</h2>
+        <p>本政策适用于 <strong>衡绘 Hengraph</strong> 的 HarmonyOS 应用（应用包名 <code>com.sunyubo.sciviz</code>，当前版本 0.2.2），
+        以及本官方网站（提供隐私政策、隐私权利与联系方式等静态文档）。</p>
+        <p>衡绘是一款科学数据分析与可视化工作台：导入 CSV，获得确定性统计结果与图表，并导出 PNG、SVG、CSV、
+        元数据清单与结构化 AI 交接规格。</p>
+        <p><strong>本政策不覆盖以下情形：</strong></p>
+        <ul>
+          <li>你把导出的文件上传到网盘、邮件、即时通讯或在线 AI 服务后，由这些第三方进行的处理；</li>
+          <li>操作系统（HarmonyOS）自身的备份、迁移、日志与系统级服务；</li>
+          <li>应用分发平台（如华为应用市场）按其自身规则处理的数据。</li>
+        </ul>
+      </section>
+
+      <section id="s2">
+        <h2><span class="idx">02</span>开发者与运营者信息</h2>
+        <p>衡绘由 <strong>SunYUBOvvO</strong> 开发并运营，为独立开发者产品，通过华为应用市场（AppGallery）分发。</p>
+        <p>衡绘没有账号体系，也不运营任何收集用户数据的后端服务。开发者不持有你的项目文件、CSV 内容或分析结果。</p>
+        <p>与本政策相关的联系渠道见 <a href="#s14">第 14 节</a>。</p>
+      </section>
+
+      <section id="s3">
+        <h2><span class="idx">03</span>你选择的 CSV 文件</h2>
+        <p>衡绘只处理<strong>你主动选择</strong>的文件：</p>
+        <ul>
+          <li><strong>获取方式：</strong>通过 HarmonyOS 系统文件选择器（<code>DocumentViewPicker</code>）由你点选文件。应用不扫描、不枚举、不检索设备上的其他文件，也不监听下载目录。</li>
+          <li><strong>读取范围：</strong>仅读取你确认的那一个文件的字节内容，按 UTF-8 解码并解析为表格；遇到编码或结构错误时给出提示并拒绝导入，不会静默改写数据。</li>
+          <li><strong>处理位置：</strong>解析、校验与计算在设备内存中完成；需要持久化时，副本写入应用自身的沙箱目录（见第 5 节）。</li>
+          <li><strong>不上传：</strong>CSV 内容不会被发送到任何服务器，也不包含在应用日志中。</li>
+        </ul>
+        <p>文件<strong>是否包含个人信息由你决定</strong>。若你的 CSV 中含受试者编号、姓名、测量记录等可识别信息，
+        这些内容属于你的数据，衡绘只在本机处理，不判断其性质、不提取、不上传。</p>
+      </section>
+
+      <section id="s4">
+        <h2><span class="idx">04</span>本地科学计算</h2>
+        <p>以下处理全部在设备本地完成，不依赖网络，也不调用任何在线模型或远程 API：</p>
+        <ul>
+          <li>描述统计与扩展统计量（含中位数、四分位、离群值报告）；</li>
+          <li>相关系数与受支持的一元线性回归（含拟合参数与决定系数）；</li>
+          <li>图表几何、坐标轴刻度与标签布局的计算；</li>
+          <li>PNG 光栅化、SVG 矢量输出与导出清单生成。</li>
+        </ul>
+        <p>计算具有确定性：同一输入在同一版本下产生同一结果，便于复核与复现。</p>
+        <p><strong>不消耗 AI Token：</strong>上述确定性本地计算不涉及任何大模型调用。这仅指衡绘本机的科学计算与图表生成，
+        不代表第三方 AI 服务不产生用量。</p>
+      </section>
+
+      <section id="s5">
+        <h2><span class="idx">05</span>本地项目存储</h2>
+        <p>当你选择“保存为项目”时，衡绘会在应用沙箱内写入一份项目快照：</p>
+        <table>
+          <thead><tr><th scope="col">项目</th><th scope="col">实际位置与内容</th></tr></thead>
+          <tbody>
+            <tr><td>根目录</td><td>应用沙箱 <code>filesDir/labplot_projects/</code>（模块私有目录 <code>base/haps/entry/files</code>）</td></tr>
+            <tr><td>项目目录</td><td><code>labplot_projects/&lt;项目ID&gt;/</code></td></tr>
+            <tr><td>版本快照</td><td><code>v-&lt;时间戳&gt;/</code>，内含 <code>manifest.json</code> 与 <code>source.csv</code></td></tr>
+            <tr><td>当前指针</td><td><code>current</code>，指向当前使用的版本，写入后读回校验</td></tr>
+          </tbody>
+        </table>
+        <p>该目录属于 HarmonyOS 应用沙箱，受系统隔离保护，其他应用无法直接读取。衡绘不向公共存储目录写入项目数据，
+        也不做云端同步。</p>
+      </section>
+
+      <section id="s6">
+        <h2><span class="idx">06</span>PNG / SVG / CSV / 元数据导出</h2>
+        <p>衡绘支持导出以下工件：<strong>PNG 位图</strong>、<strong>SVG 矢量图</strong>、
+        <strong>原始 CSV</strong>（逐字节保留，不重新序列化）、<strong>导出清单 manifest</strong>、
+        以及 <strong>AI 交接 JSON</strong>。</p>
+        <ul>
+          <li><strong>目标位置由你选择：</strong>导出统一走 HarmonyOS 系统保存选择器（<code>DocumentSaveOptions</code>），应用不请求广泛存储权限，也不会在未经确认的情况下写入其他目录。</li>
+          <li><strong>重名不自动覆盖：</strong>系统对话框遇到同名文件会拒绝保存，衡绘不会静默替换已有文件。</li>
+          <li><strong>导出清单含生成时间：</strong>manifest 中记录生成时间戳（本地时间的 ISO 8601 表示）与数据指纹，用于溯源与复核。这些字段只写入你导出的文件本身，不会被上传。</li>
+          <li><strong>写入后校验：</strong>衡绘会读回已写入的字节并比对，校验失败时报告错误而不是宣告成功。</li>
+        </ul>
+        <p>导出后的文件位于你选择的目录（常见为“文件管理”中的文档目录）或你分享到的其他应用中。此后该文件的生命周期由你与该存储位置或第三方应用决定。</p>
+      </section>
+
+      <section id="s7">
+        <h2><span class="idx">07</span>AI 交接与可选的外部共享</h2>
+        <p>衡绘提供“AI 交接”能力：依据本地分析结果生成结构化交接规格 <code>AIHandoffSpec v0.2</code>，并附带一致性校验信息。</p>
+        <ul>
+          <li><strong>生成过程完全本地：</strong>不连接任何 AI 服务，不需要网络，不消耗 Token。衡绘<strong>不是</strong>在线生成式 AI 服务，也不内置在线模型。</li>
+          <li><strong>不自动共享：</strong>应用不会自动把交接规格或任何数据发送给 AI 服务、开发者或第三方。</li>
+          <li><strong>外部使用由你决定：</strong>你可以把导出的交接 JSON 交给外部 AI 工具继续处理。此时该内容离开衡绘，由该服务提供者按其隐私政策与计费规则处理，可能产生 Token 费用。</li>
+          <li><strong>不可撤回：</strong>一旦你把文件交给第三方服务，衡绘无法控制其后续存储、使用或删除，也无法代你撤回。</li>
+        </ul>
+        <div class="callout">
+          <p><strong>提示：</strong>交接 JSON 可能包含你数据集的统计摘要与列信息。若原数据涉及敏感内容，请在接受第三方 AI 服务条款前自行评估，并考虑先做脱敏。</p>
+        </div>
+      </section>
+
+      <section id="s8">
+        <h2><span class="idx">08</span>个人信息与权限</h2>
+        <p>衡绘的发布包<strong>未声明任何 HarmonyOS 权限</strong>（模块配置中不存在权限申请项），因此不具备、也不会请求下列能力：</p>
+        <table>
+          <thead><tr><th scope="col">类别</th><th scope="col">是否访问</th><th scope="col">说明</th></tr></thead>
+          <tbody>
+            <tr><td>网络</td><td class="no">否</td><td>未声明 INTERNET 权限，无上传或下载通道</td></tr>
+            <tr><td>通讯录 / 通话 / 短信</td><td class="no">否</td><td>未声明相关权限，代码无对应调用</td></tr>
+            <tr><td>位置信息</td><td class="no">否</td><td>不请求定位权限，不读取地理信息</td></tr>
+            <tr><td>相机 / 麦克风</td><td class="no">否</td><td>无拍照、录音或语音输入功能</td></tr>
+            <tr><td>相册 / 媒体库</td><td class="no">否</td><td>不读取照片或视频，导出走系统保存选择器</td></tr>
+            <tr><td>设备标识</td><td class="no">否</td><td>不获取 UDID、OAID、序列号、IMEI、MAC 或广告标识</td></tr>
+            <tr><td>已安装应用列表</td><td class="no">否</td><td>不查询设备上的其他应用</td></tr>
+            <tr><td>账号信息</td><td class="no">否</td><td>无注册、登录或第三方账号授权</td></tr>
+          </tbody>
+        </table>
+        <p><strong>为什么这不等于“不处理任何个人信息”：</strong>衡绘确实会处理你主动导入的文件内容。
+        区别在于——这些内容的处理完全发生在本机、由你控制，开发者既不接收也无法访问；
+        这与“开发者收集个人信息”是两类不同的事实。本政策因此不使用“完全不处理任何个人信息”这类容易误导的表述。</p>
+        <p>应用内唯一的本地偏好设置（外观主题、减少动态效果）保存在设备本地，不上传。</p>
+      </section>
+
+      <section id="s9">
+        <h2><span class="idx">09</span>网络访问与第三方 SDK</h2>
+        <p>经对当前版本源码与依赖清单的审计，结论如下：</p>
+        <ul>
+          <li><strong>网络代码：</strong>未使用 <code>@ohos.net.http</code>、Socket、<code>fetch</code>、<code>WebSocket</code> 或 <code>XMLHttpRequest</code>，代码中不存在 HTTP 客户端。</li>
+          <li><strong>权限声明：</strong>模块配置未声明 INTERNET 权限，从系统层面即不具备联网能力。</li>
+          <li><strong>第三方 SDK：</strong>运行时依赖清单为空。唯一的开发依赖是 HarmonyOS 官方测试框架 <code>@ohos/hypium</code>，仅用于开发期自动化测试，不参与发布包运行。</li>
+          <li><strong>统计与崩溃上报：</strong>不含任何分析、埋点、崩溃采集或广告 SDK，也没有推送服务。</li>
+        </ul>
+        <h3>使用的系统能力（均为设备本地能力）</h3>
+        <table>
+          <thead><tr><th scope="col">系统能力</th><th scope="col">用途</th></tr></thead>
+          <tbody>
+            <tr><td>CoreFileKit</td><td>系统文件选择器、沙箱文件读写</td></tr>
+            <tr><td>ArkUI / ArkTS</td><td>界面与业务逻辑</td></tr>
+            <tr><td>AbilityKit</td><td>应用框架与上下文</td></tr>
+            <tr><td>ImageKit</td><td>PNG 编码与图像打包</td></tr>
+            <tr><td>ArkData（preferences）</td><td>本地偏好设置（主题、减少动态效果）</td></tr>
+            <tr><td>PerformanceAnalysisKit</td><td>系统日志输出（见第 10 节）</td></tr>
+          </tbody>
+        </table>
+        <p>本站（你正在阅读的网站）由 GitHub Pages 静态托管，页面本身不加载统计脚本、不设置 Cookie、不引用外部字体或追踪像素。
+        GitHub 作为托管方可能按其自身政策记录访问日志，这属于本站的托管环境，与衡绘应用本身无关。</p>
+      </section>
+
+      <section id="s10">
+        <h2><span class="idx">10</span>存储位置与保留期限</h2>
+        <table>
+          <thead><tr><th scope="col">数据</th><th scope="col">位置</th><th scope="col">保留</th></tr></thead>
+          <tbody>
+            <tr><td>项目快照（含源 CSV 副本）</td><td>应用沙箱 <code>labplot_projects/</code></td><td>保留至你删除该项目、卸载应用或清除应用数据</td></tr>
+            <tr><td>外观偏好设置</td><td>应用沙箱本地存储</td><td>同上</td></tr>
+            <tr><td>导出的 PNG / SVG / CSV / JSON</td><td>你选择的保存位置</td><td>由你与该存储位置决定，应用不再持有副本</td></tr>
+            <tr><td>开发者服务器</td><td class="no">不存在</td><td>无服务器副本，故无开发者侧的保留期</td></tr>
+          </tbody>
+        </table>
+        <p><strong>不存在云端副本：</strong>衡绘是纯本地应用，开发者不预留、不缓存、不归档你的任何文件，因此也不存在“服务器保留 N 天”这类期限。</p>
+        <h3>系统级备份与日志</h3>
+        <ul>
+          <li><strong>系统备份：</strong>应用声明允许 HarmonyOS 系统备份与恢复。若你启用系统的备份、换机迁移或恢复功能，沙箱内的项目数据可能随系统备份机制被处理。该过程由操作系统与你自身的备份设置决定，衡绘不参与、不上传，也无法代为删除备份副本——如需处理，请在系统设置中管理你的备份。</li>
+          <li><strong>运行日志：</strong>应用不写日志文件，仅向 HarmonyOS 系统日志输出运行状态与错误描述（例如“文档读取失败”及其错误码），不包含 CSV 数值内容。这些记录由系统日志机制管理，不会离开设备。</li>
+        </ul>
+      </section>
+
+      <section id="s11">
+        <h2><span class="idx">11</span>你的权利与本地删除</h2>
+        <p>你可以完整控制衡绘中的数据。具体操作路径与删除范围见 <a href="../rights/">隐私权利</a> 页面，这里概述要点：</p>
+        <ul>
+          <li><strong>查看：</strong>首页“最近项目”或底部“项目”标签可列出全部本地项目及保存时间。</li>
+          <li><strong>删除单个项目：</strong>“项目” → 目标项目右侧“⋯” → “删除” → 二次确认“确认删除”。该操作移除项目的全部版本快照（含源 CSV 副本），不可恢复。</li>
+          <li><strong>删除全部数据：</strong>卸载应用，或在系统设置中清除本应用数据。</li>
+          <li><strong>源文件不在应用内：</strong>你导入前的原始 CSV 仍在你选择它时的位置，删除项目不会删除它，需要你自行删除。</li>
+          <li><strong>已导出文件需另行删除：</strong>保存在文档目录或已分享出去的导出物，需你在对应位置手动删除。</li>
+          <li><strong>无账号注销：</strong>衡绘没有账号体系，因此不存在账号注销流程，也没有云端账号数据可申请删除。</li>
+        </ul>
+        <p>如果你希望行使查看、更正或删除之外的其他权利，或对本地操作有疑问，请通过 <a href="#s14">第 14 节</a> 的方式联系开发者。</p>
+      </section>
+
+      <section id="s12">
+        <h2><span class="idx">12</span>儿童隐私</h2>
+        <p>衡绘是面向科研、工程与教学场景的数据分析工具，<strong>并非面向儿童设计</strong>，也不以儿童为目标用户。
+        应用没有账号、没有广告、没有社交功能，不会主动收集儿童的任何个人信息。</p>
+        <p>由于应用不区分用户年龄，若未成年人使用本应用，应在监护人指导下进行。若监护人发现儿童数据被导入本应用，
+        可直接使用第 11 节的删除功能移除本地数据。</p>
+      </section>
+
+      <section id="s13">
+        <h2><span class="idx">13</span>政策更新</h2>
+        <p>当应用的数据处理行为发生变化（例如新增网络能力、导出格式或第三方组件）时，本政策会同步更新，
+        并在本页更新“生效日期”。</p>
+        <p>若变更涉及数据处理范围的实际扩大，我们会在应用内或版本发布说明中作出提示；此前已发布的版本适用其发布时有效的政策。</p>
+        <p>历史版本可在合理范围内向开发者索取。</p>
+      </section>
+
+      <section id="s14">
+        <h2><span class="idx">14</span>开发者联系方式</h2>
+        <p>隐私相关的问题、请求或投诉，请通过以下任一渠道联系：</p>
+        <ul>
+          <li><strong>电子邮件：</strong><a href="mailto:syb13894843523@outlook.com">syb13894843523@outlook.com</a></li>
+          <li><strong>支持页面：</strong><a href="../contact/">联系与支持</a></li>
+        </ul>
+        <p>为避免信息泄露，请勿在初次联系时附带完整的原始数据集；技术排查通常只需错误描述与必要的结构信息（列名、行数、报错文本）。</p>
+      </section>
+
+      <section id="s15">
+        <h2><span class="idx">15</span>生效日期与审计依据</h2>
+        <dl class="facts" style="margin-top:6px">
+          <div>
+            <dt>生效日期</dt>
+            <dd><time datetime="2026-10-21">2026 年 10 月 21 日</time></dd>
+          </div>
+          <div>
+            <dt>适用版本</dt>
+            <dd>衡绘 0.2.2 及以后（除非另有说明）</dd>
+          </div>
+        </dl>
+        <p style="margin-top:18px">本政策中的技术性陈述（权限声明、网络能力、依赖组件、存储路径、导出通道、删除路径）
+        基于对当前发布版本源码与配置的只读审计，审计日期为 2026 年 10 月 21 日。审计范围包括模块配置的权限声明、
+        全部业务源码中的网络与文件 API 调用、运行时依赖清单、项目存储目录结构、导出落点与日志输出内容。</p>
+        <p>若你认为本政策与实际行为存在不一致，请通过 <a href="#s14">第 14 节</a> 告知，我们会在核实后更正。</p>
+      </section>
+
+    </div>
+  </div>
+
+</main>
+
+<footer class="site">
+  <div class="bar">
+    <div class="col">
+      <strong>衡绘 Hengraph</strong> · <code>com.sunyubo.sciviz</code><br>
+      本页为官方隐私政策，随应用版本同步更新。
+    </div>
+    <div class="col">
+      <nav aria-label="页脚导航">
+        <a href="../">首页</a>
+        <a href="../rights/">隐私权利</a>
+        <a href="../contact/">联系与支持</a>
+      </nav>
+      <div style="margin-top:6px">生效日期：<time datetime="2026-10-21">2026-10-21</time></div>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>
